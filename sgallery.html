@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="Tooplate">
+
+        <title>PML Stays</title>
+        <!-- Favicon -->
+        <link rel="icon" href="img/main-logo/LOG_PML.jpg">
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/owl.carousel.min.css" rel="stylesheet">
+
+        <link href="css/tooplate-moso-interior.css" rel="stylesheet">
+        <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            max-width: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .gallery img:hover {
+            opacity: 0.7;
+        }
+        /* Modal styles */
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        .modal-content, #caption {  
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 120px; /* Adjusted from 15px */
+            right: 10px; /* Adjusted from 35px */
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            z-index: 2; /* Ensure it's above other elements */
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            z-index: 2; /* Ensure it's above other elements */
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+            <div class="container">
+                <header>
+                    <a href="index.html"><img class="header-logo" src="img/main-logo/pml_logo_bck.png"></a>
+                </header>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle click-scroll" href="index.html" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hotels</a>
+                            <ul class=" dropend dropdown-menu  dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <p>Puri, Odisha</p>
+                                <li><a class="dropdown-item" href="s.html"><i class="fa-solid fa-angle-right"></i> Shivangi Hotel & Restaurant, Puri</a></li>
+                                <p>Puri, Odisha</p>
+                                <li><a class="dropdown-item" href="g.html"><i class="fa-solid fa-angle-right"></i> Shree Gajanana, Puri</a></li>
+                                <p>Puri, Odisha</p>
+                                <li><a class="dropdown-item" href="d.html"> <i class="fa-solid fa-angle-right"></i> Hotel DeepGanga INN, Puri</a></li>
+                                <p>Puri, Odisha</p>
+                                <li><a class="dropdown-item" href="seco.html"><i class="fa-solid fa-angle-right"></i> ShivangiEco Hotel, Puri</a></li>
+                                <p>Puri, Odisha</p>
+                                <li><a class="dropdown-item" href="a.html"> <i class="fa-solid fa-angle-right"></i> Annapurna Resort, Puri</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="offer.html">Offers</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle click-scroll" href="gallery.html" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gallery</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="sgallery.html">Shivangi Hotel & Restaurant, Puri</a></li>
+                                <li><a class="dropdown-item" href="ggallery.html">Shree Gajanana, Puri</a></li>
+                                <li><a class="dropdown-item" href="dgallery.html">Hotel DeepGanga INN, Puri</a></li>
+                                <li><a class="dropdown-item" href="secogallery.html">ShivangiEco Hotel, Puri</a></li>
+                                <li><a class="dropdown-item" href="agallery.html">Annapurna Resort, Puri</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="reservation.html">Reservations</a>
+                            <i class="fa-solid fa-square-phone"> 033 2242 7990 </i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hoteloverview-one">
+            <div class="hoteloverview-two">
+                <h1>Shivangi Hotel and Restaurant</h1>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="gallery">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8739_40_41 copy 2.jpg" alt="" id="img-fluid1" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8818.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8948.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8928.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A88761.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A9052_3_4 copy.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8940.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8796_7_8 copy.jpg" alt="" class="img-fluid">
+                <img src="HOTEL PICS PURI/HOTEL SHIVANGI PURI/0I8A8980.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+    
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+
+        <footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-5 col-12 mb-3">
+                        <h3><a href="index.html" class="custom-link mb-1">Pantu Marketing LLP</a></h3>
+
+                        <p class="text-white">We serve hotels for your exact relaxation in Puri</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                        <h3 class="text-white mb-3">Hotels</h3>
+
+                        <p class="text-white mt-2">
+                            <i class="bi-geo-alt"></i>
+                            Puri, Odisha 
+                        </p>
+
+                        
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12 mb-3">
+                        <h3 class="text-white mb-3">Contact Info</h3>
+
+                            <p class="text-white mb-1">
+                                <i class="bi-telephone me-1"></i>
+
+                                <a href="tel: 090-080-0760" class="text-white">
+                                    84202 26909, 9981998235, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9051389160, 9830344432
+                                </a>
+                            </p>
+
+                            <p class="text-white mb-0">
+                                <i class="bi-envelope me-1"></i>
+
+                                <a href="mailto:pantumktllp@gmail.com" class="text-white">
+                                    pantumktllp@gmail.com
+                                </a>
+                            </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-7 copyright-text-wrap col-12 d-flex flex-wrap align-items-center mt-4 ms-auto">
+                        <p class="copyright-text mb-0 me-4">Copyright © Pantu Marketing LLP 2024</p>
+
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-twitter bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-facebook bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-whatsapp bi-whatsapp"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/validate.js"></script>
+        <script src="js/countdown.min.js"></script>
+        <script src="js/custom.js"></script>
+        <script>
+            var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var currentIndex = 0;
+        var images = document.querySelectorAll('.gallery img');
+
+        images.forEach((img, index) => {
+            img.onclick = function() {
+                currentIndex = index;
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        function showImage(index) {
+            currentIndex = index;
+            modalImg.src = images[index].src;
+            captionText.innerHTML = images[index].alt;
+        }
+
+        document.querySelector('.prev').onclick = function() {
+            if (currentIndex > 0) {
+                showImage(currentIndex - 1);
+            } else {
+                showImage(images.length - 1);
+            }
+        }
+
+        document.querySelector('.next').onclick = function() {
+            if (currentIndex < images.length - 1) {
+                showImage(currentIndex + 1);
+            } else {
+                showImage(0);
+            }
+        }
+        </script>
+    </body>
+</html>
